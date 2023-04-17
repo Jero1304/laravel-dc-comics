@@ -13,6 +13,7 @@
     <!-- Styles -->
     @vite('resources/js/app.js')
 
+    <script src="https://kit.fontawesome.com/c5d4023dee.js" crossorigin="anonymous"></script>
 </head>
 <body>
     @include('patrials.header')
@@ -20,6 +21,9 @@
     <main>
         @yield('content')
     </main>
+
+    @include('patrials.footer')
+
 
 
 </body>
