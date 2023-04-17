@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function () {
     $data = [
-        
+
     ];
-    return view('welcome',$data);
+    return view('welcome', $data);
 })->name('home');
 
 // Route::get('/comics/{comic}', function ($index) {
@@ -138,6 +138,8 @@ Route::get('/', function () {
 //     return 'Comic: ' . $comic['title'];
 // })->name('dettaglio.comic');
 
-Route::get('/comics',[ComicController::class,'index'])->name('comics.index');
+Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
 
-Route::get('/comics/{comic}',[ComicController::class,'show'])->name('comics.show');
+Route::get('/comics/create', [ComicController::class, 'create'])->name('comics.create');
+
+Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.show');

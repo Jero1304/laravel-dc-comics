@@ -25,4 +25,9 @@ class ComicController extends Controller
         // $comic = Comic::findOrFail($id);
         return view('comics.show',compact('comic'));
     }
+
+    public function create(){
+        // $comic = Comic::findOrFail($id);
+        return view('comics.create');
+    }
 }
