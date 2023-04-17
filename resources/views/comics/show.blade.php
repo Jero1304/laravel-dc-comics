@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="container">
-        scopri i comics
+        <h1>{{ $comic->title }}</h1>
+    </div>
+
+    <div class="container">
+    info
     </div>
 @endsection
