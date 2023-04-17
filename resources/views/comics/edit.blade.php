@@ -6,8 +6,9 @@
     </div>
 
     <div class="container">
-        <form action="" method="get">
+        <form action="{{ route('comics.update',$comic) }}" method="POST">
             @csrf
+            @method('PUT')
 
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
@@ -41,7 +42,7 @@
                 <input type="text" class="form-control" id="sale_date" name="sale_date" value="{{ $comic->sale_date }}">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
 @endsection

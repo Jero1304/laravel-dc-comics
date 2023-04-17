@@ -39,7 +39,7 @@
                 <input type="text" class="form-control" id="sale_date" name="sale_date">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
 @endsection
