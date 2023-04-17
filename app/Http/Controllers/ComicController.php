@@ -47,7 +47,13 @@ class ComicController extends Controller
 
         $new_comic->save();
 
-        return redirect()->route('comics.show', $new_comic);
+        return to_route('comics.show', $new_comic);
+    }
+
+    public function edit(Comic $comic)
+    {
+        return view('comics.edit', compact('comic'));
+        
 
     }
 }

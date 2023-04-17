@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-auto py-5">
-                <a class="btn btn-primary" href="{{ route('comics.create')}}">
+                <a class="btn btn-primary" href="{{ route('comics.create') }}">
                     new comic
                 </a>
             </div>
@@ -19,6 +19,8 @@
                         <h3>{{ $comic->title }} /comics</h3>
                     </a>
                 </div>
+
+                <a class="btn btn-primary" href="{{ route('comics.edit', $comic) }}">Edit</a>
             @endforeach
         </div>
     </div>
