@@ -1,33 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-auto py-5">
-                <a class="btn btn-primary" href="{{ route('comics.create') }}">
-                    new comic
-                </a>
+    <div class="index-bg-header">
+
+        <div class="container index-header">
+            <h1 class="index-title">Crea il tuo fumetto personalizzato</h1>
+
+            <div class="row justify-content-center">
+                <div class="col-auto py-5">
+                    <a class="btn btn-secondary p-3" href="{{ route('comics.create') }}">
+                        Create New Comic
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            @foreach ($comics as $comic)
-                <div class="col-4">
-                    <a href="{{ route('comics.show', ['comic' => $comic]) }}">
-                        <h3>{{ $comic->title }} /comics</h3>
-                    </a>
-                </div>
+    <div class="index-bg-body">
+        <div class="container index-body">
+            <h1 class="index-title">Comics Manage List</h1>
 
-                <a class="btn btn-primary" href="{{ route('comics.edit', $comic) }}">Edit</a>
+            <div class="row">
+                <ul class="list-group list-group-flush">
+                    @foreach ($comics as $comic)
+                        <li class="list-group-item">
 
-                <form action="{{ route('comics.destroy', $comic) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" class="btn btn-danger" value="Delete">
-                </form>
-            @endforeach
+                            <div class="col-4">
+                                <a class="index-info" href="{{ route('comics.show', ['comic' => $comic]) }}">
+                                    <img src="{{ $comic->thumb }}">
+                                    <h3>{{ $comic->title }}</h3>
+                                </a>
+                            </div>
+
+                            <div class="index-btn col-4 index-info">
+                                <a class="btn btn-primary mx-3" href="{{ route('comics.edit', $comic) }}">Edit</a>
+
+                                <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" class="btn btn-danger" value="Delete">
+                                </form>
+                            </div>
+
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
     </div>
 @endsection

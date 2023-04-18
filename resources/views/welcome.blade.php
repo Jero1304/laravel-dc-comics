@@ -2,14 +2,17 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="welcome-current-series">
+            <h1>current series</h1>
+        </div>
+        <div class="row thumb-container">
             @foreach ($comics as $comic)
-                <a href="{{ route('comics.show', $comic) }}">
-                    <div class="col-3">
-                        <img src="{{ $comic->thumb }}">
-                        <h3>{{ $comic->title }}</h3>
-                    </div>
-                </a>
+                <div class="col-3 py-4">
+                    <a href="{{ route('comics.show', $comic) }}">
+                        <img class="welcome-thumb" src="{{ $comic->thumb }}">
+                        <h3 class="text-light">{{ $comic->title }}</h3>
+                    </a>
+                </div>
             @endforeach
         </div>
     </div>

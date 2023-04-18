@@ -1,4 +1,40 @@
+main {
+    background-color: rgb(38, 38, 38);
+}
 
+.welcome-current-series {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 400px;
+    position: relative;
+    
+    h1 {
+        top: -100px;
+        background-color: $blue;
+        font-size: 30px;
+        text-align: center;
+        padding: 20px;
+        font-weight: bold;
+        position: absolute;
+    }
+
+}
+
+.thumb-container {
+    margin-top: 50px;
+
+    .welcome-thumb {
+        width: 300px;
+        height: 300px;
+    }
+    h3{
+        font-size: 18px;
+        padding: 20px 0;
+        text-transform: uppercase;
+        width: 250px;
+    } 
+}
 
 #bg-color-blue {
     background-color: $blue;
@@ -25,7 +61,9 @@
             max-width: 70px;
         }
     }
-    .menu-item:last-child{
+
+    .menu-item:last-child {
         width: 100px;
     }
 }
+
