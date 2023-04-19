@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="thumb" required class="form-label form-title">Imagine (url)</label>
+                        <label for="thumb" class="form-label form-title">Imagine (url)</label>
                         <input type="text" class="form-control" id="thumb" name="thumb"
                             placeholder="Inserisci URL immagine">
                     </div>
@@ -44,7 +44,7 @@
 
                 <div class="col-6">
                     <div class="mb-3 description">
-                        <label for="description" required class="form-label form-title">Descrizione</label>
+                        <label for="description" class="form-label form-title">Descrizione</label>
                         <textarea class="form-control" id="description" name="description" cols="30" rows="10"
                             placeholder="Inserisci Descrizione"></textarea>
                     </div>
@@ -55,5 +55,15 @@
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
     </div>
 @endsection

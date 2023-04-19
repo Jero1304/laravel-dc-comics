@@ -33,14 +33,24 @@ class ComicController extends Controller
 
     public function store(Request $request)
     {
+        $data = $request->validate([
+            'title' => 'required|max:255|min:3',
+            'description' => 'nullable|max:255|string',
+            'thumb' => 'required|max:255|url',
+            'price' => 'required|max:255',
+            'series ' => 'nullable|max:255|string',
+            'sale_date ' => 'nullable|date',
 
-        $data = $request->all();
+        ]);
+
+        // $data = $request->all();
 
         $new_comic = new Comic();
 
         $new_comic->title = $data['title'];
         $new_comic->description = $data['description'];
         $new_comic->thumb = $data['thumb'];
+        //https://www.focus.it/site_stored/imgs/0003/036/spiderman.jpg
         $new_comic->price = $data['price'];
         $new_comic->series = $data['series'];
         $new_comic->sale_date = $data['sale_date'];
@@ -76,7 +86,7 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         // dd($comic);
-        $comic -> delete();
+        $comic->delete();
         return to_route('comics.index');
     }
 }
