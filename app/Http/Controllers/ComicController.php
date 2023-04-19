@@ -38,11 +38,11 @@ class ComicController extends Controller
             'description' => 'nullable|max:255|string',
             'thumb' => 'required|max:255|url',
             'price' => 'required|max:255',
-            'series ' => 'nullable|max:255|string',
-            'sale_date ' => 'nullable|date',
+            'series' => 'nullable|max:255|string',
+            'sale_date' => 'nullable|date',
 
         ]);
-
+        // dd($data);
         // $data = $request->all();
 
         $new_comic = new Comic();
